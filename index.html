@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#F4EFE7">
+<title>LÓRA · концепт-бутик одежды</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+:root{--bg:#F4EFE7;--paper:#FBF8F3;--ink:#221C17;--soft:#6E655C;--line:#E2D9CC;--accent:#8C3B2A;--accent2:#B86B4B;--sand:#E9DFD1;--olive:#5B5E45;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.55;padding-bottom:76px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.serif{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--soft)}
+h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:clamp(34px,7vw,56px);line-height:1;letter-spacing:-.01em}
+h2 em{color:var(--accent);font-style:italic}
+section{padding:64px 0}
+.demo{background:var(--ink);color:#F4EFE7;text-align:center;font-size:12.5px;font-weight:600;padding:7px 12px;letter-spacing:.02em}
+
+/* header */
+header.top{position:sticky;top:0;z-index:30;background:rgba(244,239,231,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:62px;gap:12px}
+.logo{text-decoration:none;line-height:1}
+.logo b{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:30px;letter-spacing:.12em}
+.logo small{display:block;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft);margin-top:2px}
+nav.links{display:none;gap:28px;font-size:14px;font-weight:600}
+nav.links a{text-decoration:none;opacity:.85}
+nav.links a:hover{opacity:1;color:var(--accent)}
+.bagbtn{position:relative;display:flex;align-items:center;gap:8px;border:1px solid var(--ink);background:transparent;border-radius:999px;padding:9px 16px;font-weight:700;font-size:14px;cursor:pointer}
+.bagbtn .n{min-width:20px;height:20px;border-radius:99px;background:var(--accent);color:#fff;font-size:11.5px;display:grid;place-items:center;padding:0 5px}
+
+/* hero */
+.hero{padding:28px 0 56px;overflow:hidden}
+.hero .grid{display:grid;gap:28px}
+.hero h1{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:clamp(50px,13vw,108px);line-height:.92;letter-spacing:-.02em;margin:14px 0 18px}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero p.lead{font-size:17px;color:#4A423A;max-width:36ch;margin-bottom:24px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;padding:15px 24px;font-weight:700;font-size:15.5px;cursor:pointer;text-decoration:none;transition:transform .15s}
+.btn:active{transform:scale(.98)}
+.btn.d{background:var(--ink);color:#F4EFE7}
+.btn.l{background:transparent;border:1px solid var(--ink)}
+.btn.a{background:var(--accent);color:#fff}
+.perks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px;max-width:460px}
+.perk{border-top:1px solid var(--line);padding-top:10px;font-size:13.5px;color:var(--soft)}
+.perk b{display:block;color:var(--ink);font-size:15px}
+.heroart{position:relative;border-radius:200px 200px var(--r) var(--r);overflow:hidden;background:linear-gradient(170deg,#E7DCCB 0%,#D8C6AE 100%);aspect-ratio:4/5;max-height:640px}
+.heroart svg{position:absolute;inset:6% 8% 0;width:84%;height:94%}
+.heroart .tagx{position:absolute;left:16px;bottom:16px;background:var(--paper);border-radius:14px;padding:10px 14px;font-size:13px;box-shadow:0 12px 30px -16px rgba(34,28,23,.5)}
+.heroart .tagx b{display:block;font-size:15px}
+.heroart .tagy{position:absolute;right:14px;top:22%;background:var(--accent);color:#fff;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:700;transform:rotate(6deg)}
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:14px 0}
+.marquee div{display:inline-block;animation:mq 28s linear infinite;font-family:"Cormorant Garamond",serif;font-size:24px;font-style:italic}
+.marquee span{margin:0 22px;color:var(--accent2)}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee div{animation:none}}
+
+/* catalog */
+.head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:24px}
+.head p{color:var(--soft);max-width:40ch}
+.filters{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:22px;scrollbar-width:none}
+.filters::-webkit-scrollbar{display:none}
+.f{flex:none;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:9px 16px;font-weight:600;font-size:14px;cursor:pointer}
+.f[aria-pressed=true]{background:var(--ink);color:#F4EFE7;border-color:var(--ink)}
+.grid-p{display:grid;grid-template-columns:1fr 1fr;gap:18px 12px}
+.card{display:flex;flex-direction:column}
+.pic{position:relative;aspect-ratio:3/4;border-radius:var(--r);overflow:hidden}
+.pic svg{position:absolute;inset:8% 10% 2%;width:80%;height:90%;transition:transform .5s}
+.card:hover .pic svg{transform:scale(1.04)}
+.badge{position:absolute;left:10px;top:10px;background:var(--paper);border-radius:999px;padding:4px 10px;font-size:11.5px;font-weight:700}
+.badge.r{background:var(--accent);color:#fff}
+.card h3{font-size:15px;font-weight:700;margin-top:10px;line-height:1.3}
+.card .pr{font-size:15px;margin-top:2px}
+.card .pr s{color:var(--soft);font-size:13px;margin-left:6px}
+.dots{display:flex;gap:6px;margin-top:8px}
+.dot{width:16px;height:16px;border-radius:50%;border:2px solid var(--bg);box-shadow:0 0 0 1px var(--line);cursor:pointer}
+.dot[aria-pressed=true]{box-shadow:0 0 0 1.5px var(--ink)}
+.sizes{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
+.sz{min-width:30px;height:30px;border:1px solid var(--line);background:var(--paper);border-radius:9px;font-size:12px;font-weight:700;cursor:pointer;padding:0 4px}
+.sz[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sz:disabled{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+.add{margin-top:10px;width:100%;border:0;border-radius:12px;background:var(--ink);color:#F4EFE7;font-weight:700;font-size:14px;padding:11px;cursor:pointer}
+.add.ok{background:var(--olive)}
+
+/* size helper */
+.sizebox{background:var(--paper);border-radius:28px;padding:28px 18px;display:grid;gap:26px}
+.calc{display:grid;gap:12px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:13px;font-weight:700;color:var(--soft)}
+.field input,.field select{border:1px solid var(--line);background:#fff;border-radius:12px;padding:13px 14px;font-size:16px;width:100%}
+.res{background:var(--sand);border-radius:16px;padding:16px;font-size:15px;min-height:60px}
+.res b{font-family:"Cormorant Garamond",serif;font-size:40px;line-height:1;display:inline-block;margin-right:8px;color:var(--accent)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:10px 6px;text-align:center;border-bottom:1px solid var(--line)}
+th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);font-weight:700}
+td:first-child{font-weight:800}
+tr.hl td{background:var(--sand)}
+
+/* about */
+.about{background:var(--ink);color:#F4EFE7}
+.about h2 em{color:#E1A98C}
+.about .grid{display:grid;gap:28px}
+.about p{color:#CFC5B8;max-width:46ch}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:26px}
+.num b{font-family:"Cormorant Garamond",serif;font-size:46px;font-weight:500;line-height:1;display:block}
+.num span{font-size:13px;color:#B8AD9F}
+.atelier{border-radius:var(--r);background:#3A312A;aspect-ratio:5/4;position:relative;overflow:hidden}
+.atelier svg{position:absolute;inset:0;width:100%;height:100%}
+.atelier svg path[stroke="#3A312A"]{stroke:#B8AD9F}
+
+/* looks */
+.looks{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:thin}
+.look{flex:none;width:76%;max-width:340px;scroll-snap-align:start}
+.look .pic{aspect-ratio:5/4}
+.look h3{font-family:"Cormorant Garamond",serif;font-size:26px;font-weight:500;margin-top:10px}
+.look p{font-size:14px;color:var(--soft)}
+.look .sum{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-weight:700}
+.look button{border:1px solid var(--ink);background:none;border-radius:999px;padding:8px 14px;font-weight:700;font-size:13px;cursor:pointer}
+
+/* gift */
+.gift .grid{display:grid;gap:26px;align-items:center}
+.gcard{aspect-ratio:1.6;border-radius:22px;background:linear-gradient(135deg,#8C3B2A,#5A2419);color:#F4EFE7;padding:22px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 30px 60px -30px rgba(90,36,25,.7)}
+.gcard:after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;border:1px solid rgba(255,255,255,.18)}
+.gcard .l{font-family:"Cormorant Garamond",serif;font-size:30px;letter-spacing:.12em}
+.gcard .v{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,10vw,58px);line-height:1}
+.gcard .to{font-size:13px;opacity:.8}
+.noms{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.nom{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:10px 16px;font-weight:700;cursor:pointer}
+.nom[aria-pressed=true]{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* delivery */
+.steps{display:grid;gap:12px;counter-reset:s}
+.step{background:var(--paper);border-radius:var(--r);padding:20px;position:relative}
+.step:before{counter-increment:s;content:"0" counter(s);font-family:"Cormorant Garamond",serif;font-size:34px;color:var(--accent2);line-height:1;display:block;margin-bottom:8px}
+.step b{display:block;font-size:16px;margin-bottom:4px}
+.step p{font-size:14px;color:var(--soft)}
+
+/* reviews */
+.revs{display:grid;gap:12px}
+.rev{background:var(--paper);border-radius:var(--r);padding:22px}
+.rev .q{font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.3;margin-bottom:14px}
+.rev .who{font-size:13.5px;color:var(--soft)}
+.rev .who b{color:var(--ink)}
+.stars{color:var(--accent2);letter-spacing:2px;margin-bottom:8px}
+
+/* faq */
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font-weight:700;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-size:22px;line-height:1;color:var(--accent)}
+details[open] summary:after{content:"–"}
+details p{color:var(--soft);margin-top:8px;font-size:15px}
+
+/* contacts */
+.contacts .grid{display:grid;gap:20px}
+.cbox{background:var(--paper);border-radius:var(--r);padding:22px}
+.cbox p{margin-top:6px}
+.msg{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.map{border-radius:var(--r);min-height:240px;background:#E4DBCD;position:relative;overflow:hidden}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+
+footer{border-top:1px solid var(--line);padding:30px 0 24px;font-size:13px;color:var(--soft)}
+footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer a{text-decoration:none}
+
+/* sticky mobile */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:25;background:rgba(251,248,243,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;gap:8px}
+.mbar .btn{flex:1;padding:13px 10px;font-size:14.5px}
+
+/* drawer */
+.ov{position:fixed;inset:0;background:rgba(34,28,23,.45);z-index:40;opacity:0;pointer-events:none;transition:opacity .25s}
+.ov.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;right:0;top:0;bottom:0;width:min(440px,100%);background:var(--bg);z-index:41;transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column}
+.drawer.on{transform:none}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:18px 18px 12px;border-bottom:1px solid var(--line)}
+.dh h3{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:500}
+.x{border:0;background:var(--paper);width:40px;height:40px;border-radius:50%;font-size:20px;cursor:pointer}
+.db{flex:1;overflow-y:auto;padding:16px 18px}
+.item{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.item .th{width:64px;height:80px;border-radius:10px;position:relative;overflow:hidden}
+.item .th svg{position:absolute;inset:6%;width:88%;height:88%}
+.item b{display:block;font-size:14px}
+.item span{font-size:12.5px;color:var(--soft)}
+.item button{border:0;background:none;color:var(--soft);font-size:13px;cursor:pointer;text-decoration:underline}
+.empty{color:var(--soft);padding:20px 0}
+.total{display:flex;justify-content:space-between;font-weight:800;font-size:17px;padding:14px 0}
+form#order{display:grid;gap:12px;margin-top:6px}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.seg label{border:1px solid var(--line);background:var(--paper);border-radius:12px;padding:11px;font-size:13.5px;font-weight:600;cursor:pointer;display:flex;gap:8px;align-items:flex-start}
+.seg input{margin-top:3px;accent-color:var(--accent)}
+.chk{display:flex;gap:10px;font-size:13px;color:var(--soft);align-items:flex-start}
+.chk input{margin-top:3px;accent-color:var(--accent)}
+.done{display:none;background:var(--paper);border-radius:var(--r);padding:22px;margin-top:12px}
+.done b{font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:500;display:block}
+.toast{position:fixed;left:50%;bottom:92px;transform:translateX(-50%);background:var(--ink);color:#F4EFE7;padding:11px 18px;border-radius:999px;font-size:14px;font-weight:600;z-index:50;display:none;white-space:nowrap;max-width:calc(100% - 32px);overflow:hidden;text-overflow:ellipsis}
+
+@media (min-width:760px){
+  body{padding-bottom:0}
+  .mbar{display:none}
+  nav.links{display:flex}
+  section{padding:96px 0}
+  .hero{padding:48px 0 80px}
+  .hero .grid{grid-template-columns:1.1fr .9fr;align-items:center;gap:48px}
+  .grid-p{grid-template-columns:repeat(3,1fr);gap:34px 22px}
+  .sizebox{grid-template-columns:.9fr 1.1fr;padding:44px;gap:44px}
+  .about .grid{grid-template-columns:1fr 1fr;align-items:center;gap:56px}
+  .look{width:32%}
+  .gift .grid{grid-template-columns:1fr 1fr;gap:56px}
+  .steps{grid-template-columns:repeat(4,1fr)}
+  .revs{grid-template-columns:repeat(3,1fr)}
+  .contacts .grid{grid-template-columns:1fr 1.2fr}
+  .toast{bottom:28px}
+}
+@media (min-width:1080px){.grid-p{grid-template-columns:repeat(4,1fr)}}
+</style>
+</head>
+<body>
+<div class="demo">Демо-сайт: так может выглядеть сайт вашего магазина одежды</div>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="logo" href="#top"><b>LÓRA</b><small>концепт-бутик</small></a>
+    <nav class="links">
+      <a href="#catalog">Коллекция</a>
+      <a href="#size">Размеры</a>
+      <a href="#looks">Образы</a>
+      <a href="#gift">Сертификат</a>
+      <a href="#delivery">Доставка</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <button class="bagbtn" id="openBag" aria-label="Открыть заказ">Заказ <span class="n" id="bagN">0</span></button>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow">Осень–зима · своё производство</div>
+      <h1>Тёплые вещи <em>с характером</em></h1>
+      <p class="lead">Пальто, жакеты и трикотаж, которые шьём сами в небольшом цехе. Выберите модель и размер прямо здесь, а мы доставим по всей России.</p>
+      <div class="btns">
+        <a class="btn d" href="#catalog">Смотреть коллекцию →</a>
+        <a class="btn l" href="#gift">Подарочный сертификат</a>
+      </div>
+      <div class="perks">
+        <div class="perk"><b>Доставка 0 ₽</b>по всей России от 7 000 ₽</div>
+        <div class="perk"><b>Примерка</b>при получении в СДЭК</div>
+        <div class="perk"><b>Свой цех</b>отшиваем партиями по 30 штук</div>
+        <div class="perk"><b>Обмен 14 дней</b>если не подошёл размер</div>
+      </div>
+    </div>
+    <div class="heroart">
+      <svg viewBox="0 0 200 260" id="heroSvg" aria-hidden="true"></svg>
+      <div class="tagy">Новинка</div>
+      <div class="tagx"><b>Пальто «Урал»</b>шерсть 80% · 18 900 ₽</div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div id="mq"></div></div>
+
+<section id="catalog">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow">Коллекция</div><h2>Новая <em>осень</em></h2></div>
+      <p>Цены и все размеры на виду. Нажмите на размер и добавьте вещь в заказ: мы перезвоним и всё подтвердим.</p>
+    </div>
+    <div class="filters" role="toolbar" aria-label="Категории">
+      <button class="f" data-f="all" aria-pressed="true">Все</button>
+      <button class="f" data-f="coat" aria-pressed="false">Пальто</button>
+      <button class="f" data-f="jacket" aria-pressed="false">Жакеты</button>
+      <button class="f" data-f="knit" aria-pressed="false">Трикотаж</button>
+      <button class="f" data-f="dress" aria-pressed="false">Платья</button>
+      <button class="f" data-f="pants" aria-pressed="false">Брюки</button>
+    </div>
+    <div class="grid-p" id="grid"></div>
+  </div>
+</section>
+
+<section id="size" style="padding-top:0">
+  <div class="wrap">
+    <div class="sizebox">
+      <div>
+        <div class="eyebrow">Подбор размера</div>
+        <h2 style="margin:8px 0 14px">Ваш размер <em>за 10 секунд</em></h2>
+        <p style="color:var(--soft);margin-bottom:18px">Покупатели из других городов чаще всего спрашивают именно это. Теперь ответ есть на сайте.</p>
+        <div class="calc">
+          <div class="field"><label for="c-chest">Обхват груди, см</label><input id="c-chest" type="number" inputmode="numeric" min="70" max="130" placeholder="Например, 90"></div>
+          <div class="field"><label for="c-fit">Как любите носить</label>
+            <select id="c-fit"><option value="0">По фигуре</option><option value="1">Свободно, оверсайз</option></select></div>
+          <div class="res" id="c-res">Введите обхват груди, и мы подскажем размер.</div>
+        </div>
+      </div>
+      <div style="overflow-x:auto">
+        <table id="stable">
+          <thead><tr><th>Размер</th><th>RU</th><th>Грудь</th><th>Талия</th><th>Бёдра</th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <p style="font-size:13px;color:var(--soft);margin-top:12px">Рост моделей 164–172 см. Длина рукава и изделия указаны в карточке товара.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow" style="color:#B8AD9F">О нас</div>
+      <h2 style="margin:10px 0 18px">Шьём сами, <em>поэтому знаем каждый шов</em></h2>
+      <p>LÓRA начиналась с одного жакета для себя. Сегодня у нас свой цех на 6 швей и шоурум в центре города. Ткани выбираем лично: итальянская шерсть, плотный хлопок, мягкий кашемир с шёлком.</p>
+      <div class="nums">
+        <div class="num"><b>6</b><span>лет шьём одежду</span></div>
+        <div class="num"><b>40+</b><span>моделей в сезон</span></div>
+        <div class="num"><b>2 300</b><span>заказов по России</span></div>
+      </div>
+    </div>
+    <div class="atelier"><svg viewBox="0 0 400 320" id="atelier" aria-hidden="true"></svg></div>
+  </div>
+</section>
+
+<section id="looks">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow">Готовые образы</div><h2>Собрали <em>за вас</em></h2></div>
+      <p>Один клик, и весь образ в заказе. Удобно, если покупаете в подарок или впервые.</p>
+    </div>
+    <div class="looks" id="looksRow"></div>
+  </div>
+</section>
+
+<section id="gift" class="gift" style="background:var(--paper)">
+  <div class="wrap grid">
+    <div class="gcard" id="gcard">
+      <div class="l">LÓRA</div>
+      <div><div class="to" id="gto">Подарочный сертификат</div><div class="v" id="gval">5 000 ₽</div></div>
+      <div class="to">Действует 12 месяцев · онлайн и в шоуруме</div>
+    </div>
+    <div>
+      <div class="eyebrow">Подарок к Новому году</div>
+      <h2 style="margin:10px 0 12px">Сертификат, <em>который точно подойдёт</em></h2>
+      <p style="color:var(--soft)">Выберите номинал, впишите имя. Красивый сертификат придёт на почту или в мессенджер за минуту, даже если вы в другом городе.</p>
+      <div class="noms" id="noms">
+        <button class="nom" data-v="3000" aria-pressed="false">3 000 ₽</button>
+        <button class="nom" data-v="5000" aria-pressed="true">5 000 ₽</button>
+        <button class="nom" data-v="10000" aria-pressed="false">10 000 ₽</button>
+        <button class="nom" data-v="15000" aria-pressed="false">15 000 ₽</button>
+      </div>
+      <div class="field" style="margin-bottom:14px"><label for="g-name">Для кого (по желанию)</label><input id="g-name" maxlength="24" placeholder="Например, для Марины"></div>
+      <button class="btn a" id="gAdd">Добавить сертификат в заказ</button>
+    </div>
+  </div>
+</section>
+
+<section id="delivery">
+  <div class="wrap">
+    <div class="head"><div><div class="eyebrow">Доставка и оплата</div><h2>Как это <em>работает</em></h2></div></div>
+    <div class="steps">
+      <div class="step"><b>Выбираете</b><p>Модель, цвет и размер прямо на сайте. Не нужно ничего спрашивать в директе.</p></div>
+      <div class="step"><b>Подтверждаем</b><p>Менеджер напишет в течение 30 минут и проверит наличие.</p></div>
+      <div class="step"><b>Отправляем</b><p>СДЭК или Почта, 2–6 дней по России. От 7 000 ₽ доставка за наш счёт.</p></div>
+      <div class="step"><b>Примеряете</b><p>Оплата при получении после примерки. Не подошло, вернёте курьеру.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><div><div class="eyebrow">Отзывы</div><h2>Носят <em>и возвращаются</em></h2></div></div>
+    <div class="revs">
+      <div class="rev"><div class="stars">★★★★★</div><div class="q">«Заказала пальто из Новосибирска по таблице размеров. Село идеально, как будто шили на меня.»</div><div class="who"><b>Ольга</b> · Новосибирск</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><div class="q">«Купил жене сертификат за пять минут до выхода из дома. Она выбрала жакет и уже ждёт весеннюю коллекцию.»</div><div class="who"><b>Артём</b> · Пермь</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><div class="q">«Ткань и швы на уровне дорогих брендов. Приятно, что всё видно сразу: цена, размеры, сроки.»</div><div class="who"><b>Камила</b> · Казань</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap" style="max-width:820px">
+    <div class="eyebrow">Вопросы</div>
+    <h2 style="margin:10px 0 16px">Частые <em>вопросы</em></h2>
+    <details><summary>Можно ли примерить перед оплатой?</summary><p>Да. В пунктах СДЭК есть примерочная: оплачиваете только то, что подошло.</p></details>
+    <details><summary>Как понять, что размер подойдёт?</summary><p>Воспользуйтесь подбором размера выше или напишите нам рост и обхваты: стилист подскажет за пару минут.</p></details>
+    <details><summary>Есть ли рассрочка?</summary><p>Да, через Долями и Сплит: четыре платежа без переплаты.</p></details>
+    <details><summary>Шьёте ли вы на заказ?</summary><p>Да, любую модель коллекции можно отшить под ваши мерки, срок 10–14 дней.</p></details>
+  </div>
+</section>
+
+<section id="contacts" class="contacts" style="padding-top:0">
+  <div class="wrap grid">
+    <div class="cbox">
+      <div class="eyebrow">Шоурум</div>
+      <h2 style="margin:10px 0 12px;font-size:40px">Приходите <em>примерить</em></h2>
+      <p><b>ул. Республики, 48, 2 этаж</b></p>
+      <p style="color:var(--soft)">Ежедневно 11:00–20:00</p>
+      <p style="margin-top:12px"><a href="#" data-toast="В вашей версии здесь будет ваш номер">+7 (900) 000-00-00</a></p>
+      <div class="msg">
+        <a class="btn d" href="#" data-toast="В вашей версии откроется ваш Telegram" style="padding:12px 18px;font-size:14px">Telegram</a>
+        <a class="btn l" href="#" data-toast="В вашей версии откроется ваш WhatsApp" style="padding:12px 18px;font-size:14px">WhatsApp</a>
+        <a class="btn l" href="#" data-toast="В вашей версии откроется ваш Instagram" style="padding:12px 18px;font-size:14px">Instagram</a>
+      </div>
+    </div>
+    <div class="map"><svg viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <rect width="600" height="360" fill="#E4DBCD"/>
+      <g stroke="#F4EFE7" stroke-width="16" fill="none"><path d="M-10 120 L610 160"/><path d="M-10 280 L610 240"/><path d="M180 -10 L220 370"/><path d="M420 -10 L380 370"/></g>
+      <g stroke="#F4EFE7" stroke-width="6" fill="none"><path d="M-10 40 L610 70"/><path d="M60 -10 L90 370"/><path d="M520 -10 L540 370"/><path d="M-10 330 L610 320"/></g>
+      <path d="M300 0 C330 80 260 150 320 220 C360 270 330 320 350 360" stroke="#C9D3C4" stroke-width="22" fill="none"/>
+      <g transform="translate(300 175)"><circle r="34" fill="#8C3B2A" opacity=".15"/><path d="M0 18 C-14 0 -18 -8 -18 -16 a18 18 0 0 1 36 0 c0 8 -4 16 -18 34z" fill="#8C3B2A"/><circle cy="-16" r="6" fill="#fff"/></g>
+      <text x="330" y="150" font-family="Manrope" font-size="15" font-weight="700" fill="#221C17">LÓRA</text>
+    </svg></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <div><b style="font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.12em;color:var(--ink)">LÓRA</b><br>© 2026 · демо-сайт, все данные вымышленные</div>
+    <div style="align-self:flex-end"><a href="https://t.me/abanev_dev" target="_blank" rel="noopener">FOR.MI designed &amp; developed by ABN</a></div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a class="btn l" href="#catalog">Коллекция</a>
+  <button class="btn d" id="openBag2">Заказ · <span id="bagN2">0</span></button>
+</div>
+
+<div class="ov" id="ov"></div>
+<aside class="drawer" id="drawer" aria-label="Ваш заказ">
+  <div class="dh"><h3>Ваш заказ</h3><button class="x" id="closeBag" aria-label="Закрыть">×</button></div>
+  <div class="db">
+    <div id="items"></div>
+    <div class="total" id="total" style="display:none"><span>Итого</span><span id="sum">0 ₽</span></div>
+    <form id="order" novalidate style="display:none">
+      <div class="field"><label for="o-name">Имя</label><input id="o-name" autocomplete="name" placeholder="Как к вам обращаться"></div>
+      <div class="field"><label for="o-phone">Телефон</label><input id="o-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__"></div>
+      <div class="field"><label for="o-city">Город</label><input id="o-city" autocomplete="address-level2" placeholder="Например, Екатеринбург"></div>
+      <div class="seg">
+        <label><input type="radio" name="dl" value="СДЭК с примеркой" checked> СДЭК с примеркой</label>
+        <label><input type="radio" name="dl" value="Самовывоз из шоурума"> Самовывоз из шоурума</label>
+      </div>
+      <label class="chk"><input type="checkbox" id="o-ok"> Согласна(ен) на обработку персональных данных</label>
+      <button class="btn a" type="submit" style="width:100%">Отправить заказ</button>
+    </form>
+    <div class="done" id="done"></div>
+  </div>
+</aside>
+<div class="toast" id="toast"></div>
+
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const rub=n=>n.toLocaleString("ru-RU")+" ₽";
+
+/* одежда: силуэты на вешалке */
+const shade=(hex,k)=>{const n=parseInt(hex.slice(1),16);let r=n>>16,g=n>>8&255,b=n&255;r=Math.round(r*k);g=Math.round(g*k);b=Math.round(b*k);return "#"+((1<<24)+(Math.min(r,255)<<16)+(Math.min(g,255)<<8)+Math.min(b,255)).toString(16).slice(1)};
+const hanger='<path d="M100 30 c0-8 4-12 9-12 s9 4 9 9 c0 5-5 7-18 14 L44 66 h112 L100 41" fill="none" stroke="#3A312A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>';
+function garment(t,c){
+  const d=shade(c,.82),l=shade(c,1.12);
+  const S={
+coat:`<path d="M72 64 L52 72 L38 214 L58 216 L66 112 Z" fill="${d}"/><path d="M128 64 L148 72 L162 214 L142 216 L134 112 Z" fill="${d}"/>
+<path d="M72 64 L128 64 L138 250 L62 250 Z" fill="${c}"/>
+<path d="M88 62 L100 120 L112 62" fill="none" stroke="${d}" stroke-width="3"/><path d="M88 62 L78 100 L100 120 M112 62 L122 100 L100 120" fill="${l}" stroke="${d}" stroke-width="1.5"/>
+<path d="M64 156 L136 156 L137 166 L63 166 Z" fill="${d}"/><rect x="94" y="154" width="12" height="14" rx="2" fill="none" stroke="${l}" stroke-width="2"/>
+<path d="M100 120 L100 250" stroke="${d}" stroke-width="1.5"/><circle cx="106" cy="134" r="2.6" fill="${d}"/><circle cx="106" cy="190" r="2.6" fill="${d}"/><circle cx="106" cy="214" r="2.6" fill="${d}"/>
+<path d="M70 200 h16 M114 200 h16" stroke="${d}" stroke-width="2"/>`,
+jacket:`<path d="M72 64 L52 72 L42 196 L62 198 L68 110 Z" fill="${d}"/><path d="M128 64 L148 72 L158 196 L138 198 L132 110 Z" fill="${d}"/>
+<path d="M72 64 L128 64 L134 190 L66 190 Z" fill="${c}"/>
+<path d="M88 62 L76 96 L100 140 L124 96 L112 62" fill="${l}" stroke="${d}" stroke-width="1.5"/><path d="M100 140 L100 190" stroke="${d}" stroke-width="1.5"/>
+<circle cx="104" cy="152" r="3" fill="#2B241F"/><circle cx="104" cy="170" r="3" fill="#2B241F"/><path d="M74 160 h18 M108 160 h18" stroke="${d}" stroke-width="2"/>`,
+knit:`<path d="M70 64 L46 76 L36 192 L58 194 L66 104 Z" fill="${d}"/><path d="M130 64 L154 76 L164 192 L142 194 L134 104 Z" fill="${d}"/>
+<path d="M70 64 L130 64 L136 192 L64 192 Z" fill="${c}"/><path d="M84 64 Q100 84 116 64" fill="none" stroke="${d}" stroke-width="5"/>
+<g stroke="${d}" stroke-width="1.6">${[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14].map(i=>`<path d="M${68+i*4.6} 178 V192"/>`).join("")}</g>
+<g stroke="${l}" stroke-width="1.4" fill="none" opacity=".8">${[0,1,2,3,4].map(i=>`<path d="M${80+i*10} 92 l4 8 l-4 8 l4 8 l-4 8 l4 8 l-4 8 l4 8 l-4 8 l4 8"/>`).join("")}</g>
+<path d="M36 186 L58 188 M142 188 L164 186" stroke="${d}" stroke-width="6"/>`,
+dress:`<path d="M78 64 L66 74 L62 118 L74 120 L80 92 Z" fill="${d}"/><path d="M122 64 L134 74 L138 118 L126 120 L120 92 Z" fill="${d}"/>
+<path d="M78 64 L122 64 L118 134 L82 134 Z" fill="${c}"/><path d="M90 64 Q100 78 110 64" fill="none" stroke="${d}" stroke-width="3"/>
+<path d="M82 134 L118 134 L150 250 L50 250 Z" fill="${c}"/><path d="M80 132 h40 v8 h-40z" fill="${d}"/>
+<path d="M92 140 L82 250 M108 140 L118 250 M100 140 V250" stroke="${d}" stroke-width="1.3" opacity=".7"/>`,
+pants:`<rect x="66" y="58" width="68" height="14" rx="2" fill="${d}"/><path d="M66 72 L134 72 L144 250 L106 250 L100 120 L94 250 L56 250 Z" fill="${c}"/>
+<path d="M82 72 L80 250 M118 72 L120 250" stroke="${d}" stroke-width="1.5"/><path d="M100 72 V112" stroke="${d}" stroke-width="2"/>
+<g fill="${l}">${[72,84,96,108,120].map(x=>`<rect x="${x}" y="56" width="4" height="18" rx="1"/>`).join("")}</g>`,
+shirt:`<path d="M72 64 L50 74 L40 186 L60 188 L66 104 Z" fill="${d}"/><path d="M128 64 L150 74 L160 186 L140 188 L134 104 Z" fill="${d}"/>
+<path d="M72 64 L128 64 L134 206 Q100 214 66 206 Z" fill="${c}"/><path d="M86 60 L100 78 L114 60 L110 54 L100 66 L90 54 Z" fill="${l}" stroke="${d}" stroke-width="1.5"/>
+<path d="M100 78 V210" stroke="${d}" stroke-width="2"/><g fill="${d}">${[96,120,144,168,192].map(y=>`<circle cx="104" cy="${y}" r="2.2"/>`).join("")}</g>
+<rect x="76" y="96" width="16" height="18" rx="2" fill="none" stroke="${d}" stroke-width="1.5"/>`
+  };
+  return hanger+S[t];
+}
+const svgOf=(t,c)=>`<svg viewBox="0 0 200 260" aria-hidden="true">${garment(t,c)}</svg>`;
+
+const SIZES=["XS","S","M","L","XL"];
+const P=[
+ {id:1,n:"Пальто «Урал»",cat:"coat",t:"coat",p:18900,b:"Новинка",cols:[["#B48A63","Кэмел"],["#3B3633","Графит"],["#C9BBA7","Молоко"]],out:["XS"]},
+ {id:2,n:"Жакет оверсайз",cat:"jacket",t:"jacket",p:12400,b:"Хит",cols:[["#2F2B29","Чёрный"],["#7D6B5C","Мокко"],["#9C3D2C","Бордо"]],out:[]},
+ {id:3,n:"Свитер с косами",cat:"knit",t:"knit",p:6900,old:8200,cols:[["#D9CBB5","Овсяный"],["#5B5E45","Олива"]],out:["XL"]},
+ {id:4,n:"Платье-миди из шерсти",cat:"dress",t:"dress",p:9800,cols:[["#6A2B24","Вишня"],["#2F3A4A","Синий"]],out:[]},
+ {id:5,n:"Брюки палаццо",cat:"pants",t:"pants",p:6400,cols:[["#8E8172","Тауп"],["#2F2B29","Чёрный"]],out:["XS","XL"]},
+ {id:6,n:"Рубашка из хлопка",cat:"jacket",t:"shirt",p:5200,cols:[["#E9E2D6","Белый"],["#9DB0C4","Небесный"]],out:[]},
+ {id:7,n:"Пальто-халат с поясом",cat:"coat",t:"coat",p:21500,b:"Осталось 3",cols:[["#5B5E45","Олива"],["#B48A63","Кэмел"]],out:["XS","S"]},
+ {id:8,n:"Кардиган из альпаки",cat:"knit",t:"knit",p:8700,cols:[["#C79C86","Пудра"],["#7D6B5C","Мокко"]],out:[]}
+];
+const BG=["#EAE0D2","#E4DACB","#EEE6DA","#E6DDD3"];
+const sel={};P.forEach(x=>sel[x.id]={c:0,s:null});
+
+function card(x,i){
+  const s=sel[x.id],col=x.cols[s.c][0];
+  return `<article class="card" data-id="${x.id}">
+  <div class="pic" style="background:${BG[i%4]}">${x.b?`<span class="badge ${x.b==="Осталось 3"?"r":""}">${x.b}</span>`:""}${svgOf(x.t,col)}</div>
+  <h3>${x.n}</h3>
+  <div class="pr">${rub(x.p)}${x.old?`<s>${rub(x.old)}</s>`:""}</div>
+  <div class="dots">${x.cols.map((c,j)=>`<button class="dot" title="${c[1]}" aria-label="Цвет ${c[1]}" data-c="${j}" aria-pressed="${j===s.c}" style="background:${c[0]}"></button>`).join("")}</div>
+  <div class="sizes">${SIZES.map(z=>`<button class="sz" data-s="${z}" aria-pressed="${s.s===z}" ${x.out.includes(z)?"disabled":""}>${z}</button>`).join("")}</div>
+  <button class="add">${s.s?"В заказ · "+s.s:"Выберите размер"}</button>
+</article>`;
+}
+let flt="all";
+function render(){const L=P.filter(x=>flt==="all"||x.cat===flt);$("#grid").innerHTML=L.map(card).join("")}
+render();
+document.querySelector(".filters").addEventListener("click",e=>{const b=e.target.closest(".f");if(!b)return;flt=b.dataset.f;document.querySelectorAll(".f").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
+$("#grid").addEventListener("click",e=>{
+  const c=e.target.closest(".card");if(!c)return;const x=P.find(p=>p.id==c.dataset.id),s=sel[x.id];
+  if(e.target.closest(".dot")){s.c=+e.target.closest(".dot").dataset.c;rerender(c,x);return}
+  if(e.target.closest(".sz")){s.s=e.target.closest(".sz").dataset.s;rerender(c,x);return}
+  if(e.target.closest(".add")){
+    if(!s.s){toast("Сначала выберите размер");c.querySelector(".sizes").animate([{transform:"translateX(0)"},{transform:"translateX(-6px)"},{transform:"translateX(6px)"},{transform:"translateX(0)"}],{duration:300});return}
+    addBag({n:x.n,p:x.p,t:x.t,col:x.cols[s.c][0],cn:x.cols[s.c][1],s:s.s});
+    const b=c.querySelector(".add");b.textContent="Добавлено ✓";b.classList.add("ok");
+  }
+});
+function rerender(c,x){const i=[...c.parentNode.children].indexOf(c);const tmp=document.createElement("div");tmp.innerHTML=card(x,i);c.replaceWith(tmp.firstElementChild)}
+
+/* бегущая строка */
+const mq="Своё производство<span>✦</span>Доставка по России<span>✦</span>Примерка при получении<span>✦</span>Итальянская шерсть<span>✦</span>Подарочные сертификаты<span>✦</span>";
+$("#mq").innerHTML=mq.repeat(4);
+$("#heroSvg").innerHTML=garment("coat","#B48A63");
+
+/* ателье */
+$("#atelier").innerHTML=`<rect width="400" height="320" fill="#3A312A"/>
+<rect x="0" y="236" width="400" height="84" fill="#2E2621"/>
+<g transform="translate(40 30) scale(.9)">${garment("jacket","#B48A63")}</g>
+<g transform="translate(150 22) scale(.95)">${garment("coat","#5B5E45")}</g>
+<g transform="translate(262 34) scale(.86)">${garment("dress","#8C3B2A")}</g>
+<path d="M10 52 H390" stroke="#6E655C" stroke-width="3"/>
+<g transform="translate(20 274)"><rect width="90" height="26" rx="4" fill="#E9DFD1"/><text x="45" y="18" text-anchor="middle" font-family="Manrope" font-size="12" font-weight="800" fill="#3A312A">LÓRA ATELIER</text></g>`;
+
+/* размеры */
+const ST=[["XS","42","82–85","64–67","88–91"],["S","44","86–89","68–71","92–95"],["M","46","90–93","72–75","96–99"],["L","48","94–97","76–79","100–103"],["XL","50","98–102","80–84","104–108"]];
+$("#stable tbody").innerHTML=ST.map(r=>`<tr data-s="${r[0]}">${r.map(v=>`<td>${v}</td>`).join("")}</tr>`).join("");
+function calc(){
+  const v=+$("#c-chest").value,fit=+$("#c-fit").value;
+  document.querySelectorAll("#stable tr").forEach(t=>t.classList.remove("hl"));
+  if(!v){$("#c-res").innerHTML="Введите обхват груди, и мы подскажем размер.";return}
+  if(v<78||v>110){$("#c-res").innerHTML="Такой размер шьём на заказ под ваши мерки. Напишите нам, подберём.";return}
+  let i=ST.findIndex(r=>v<=+r[2].split("–")[1]);if(i<0)i=4;
+  if(fit&&i>0)i--;
+  $("#c-res").innerHTML=`<b>${ST[i][0]}</b>RU ${ST[i][1]}${fit?" · для свободной посадки берите на размер меньше: крой уже оверсайз":""}`;
+  document.querySelector(`#stable tr[data-s="${ST[i][0]}"]`).classList.add("hl");
+}
+["input","change"].forEach(ev=>{$("#c-chest").addEventListener(ev,calc);$("#c-fit").addEventListener(ev,calc)});
+
+/* образы */
+const LOOKS=[
+ {n:"Город в ноябре",d:"Пальто «Урал» + свитер с косами + брюки палаццо",ids:[1,3,5],bg:"#E4DACB"},
+ {n:"Офис без скуки",d:"Жакет оверсайз + рубашка из хлопка + брюки палаццо",ids:[2,6,5],bg:"#EAE0D2"},
+ {n:"Вечер вдвоём",d:"Платье-миди из шерсти + пальто-халат с поясом",ids:[4,7],bg:"#EEE6DA"}
+];
+$("#looksRow").innerHTML=LOOKS.map((l,k)=>{
+  const items=l.ids.map(id=>P.find(p=>p.id===id));const sum=items.reduce((a,b)=>a+b.p,0);
+  const art=items.slice(0,3).map((x,j)=>`<g transform="translate(${[10,120,230][j]-(items.length===2?-55:0)} ${j%2?28:8}) scale(.62)">${garment(x.t,x.cols[0][0])}</g>`).join("");
+  return `<article class="look"><div class="pic" style="background:${l.bg}"><svg viewBox="0 0 360 200" style="inset:4% 2% 0;width:96%;height:96%">${art}</svg></div>
+  <h3>${l.n}</h3><p>${l.d}</p><div class="sum"><span>${rub(sum)}</span><button data-look="${k}">Весь образ в заказ</button></div></article>`;
+}).join("");
+$("#looksRow").addEventListener("click",e=>{const b=e.target.closest("[data-look]");if(!b)return;
+  LOOKS[b.dataset.look].ids.forEach(id=>{const x=P.find(p=>p.id===id);addBag({n:x.n,p:x.p,t:x.t,col:x.cols[0][0],cn:x.cols[0][1],s:"размер уточним",silent:1})});
+  toast("Образ в заказе. Размер уточним при звонке");b.textContent="Добавлено ✓"});
+
+/* сертификат */
+let gv=5000;
+$("#noms").addEventListener("click",e=>{const b=e.target.closest(".nom");if(!b)return;gv=+b.dataset.v;document.querySelectorAll(".nom").forEach(x=>x.setAttribute("aria-pressed",x===b));$("#gval").textContent=rub(gv)});
+$("#g-name").addEventListener("input",e=>{const v=e.target.value.trim();$("#gto").textContent=v?"Подарок "+v:"Подарочный сертификат"});
+$("#gAdd").addEventListener("click",()=>{const v=$("#g-name").value.trim();addBag({n:"Сертификат LÓRA"+(v?" · "+v:""),p:gv,cert:1})});
+
+/* заказ */
+const BAG=[];
+function addBag(it){BAG.push(it);drawBag();if(!it.silent)toast("Добавлено в заказ")}
+function drawBag(){
+  const n=BAG.length;$("#bagN").textContent=n;$("#bagN2").textContent=n;
+  $("#items").innerHTML=n?BAG.map((x,i)=>`<div class="item"><div class="th" style="background:${x.cert?"#8C3B2A":"#EAE0D2"}">${x.cert?'<svg viewBox="0 0 64 80"><text x="32" y="46" text-anchor="middle" font-family="Cormorant Garamond" font-size="16" fill="#F4EFE7" letter-spacing="2">LÓRA</text></svg>':svgOf(x.t,x.col)}</div><div><b>${esc(x.n)}</b><span>${x.cert?"электронный":esc(x.cn)+" · "+esc(x.s)} · ${rub(x.p)}</span></div><button data-rm="${i}">Убрать</button></div>`).join(""):'<p class="empty">Пока пусто. Выберите размер в карточке и нажмите «В заказ».</p>';
+  $("#total").style.display=n?"flex":"none";$("#order").style.display=n?"grid":"none";
+  $("#sum").textContent=rub(BAG.reduce((a,b)=>a+b.p,0));
+}
+drawBag();
+$("#items").addEventListener("click",e=>{const b=e.target.closest("[data-rm]");if(!b)return;BAG.splice(+b.dataset.rm,1);drawBag()});
+const openBag=()=>{$("#done").style.display="none";if(BAG.length)$("#order").style.display="grid";$("#ov").classList.add("on");$("#drawer").classList.add("on")};
+const closeBag=()=>{$("#ov").classList.remove("on");$("#drawer").classList.remove("on")};
+$("#openBag").onclick=openBag;$("#openBag2").onclick=openBag;$("#closeBag").onclick=closeBag;$("#ov").onclick=closeBag;
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeBag()});
+
+/* телефон: +7 (XXX) XXX-XX-XX, не больше 10 цифр после +7 */
+const fmtPhone=v=>{const dg=x=>x.replace(/\D/g,"");let p;if(v.trim().startsWith("+7"))p=dg(v.trim().slice(2));else{p=dg(v);if(!p)return "";if(/^[78]/.test(p))p=p.slice(1)}if(p.length>10&&/^[78]/.test(p))p=p.slice(1);p=p.slice(0,10);let s="+7";if(p.length)s+=" ("+p.slice(0,3);if(p.length>3)s+=") "+p.slice(3,6);if(p.length>6)s+="-"+p.slice(6,8);if(p.length>8)s+="-"+p.slice(8,10);return s};
+const tel=$("#o-phone");
+tel.addEventListener("input",()=>{tel.value=fmtPhone(tel.value)});
+tel.addEventListener("focus",()=>{if(!tel.value)tel.value="+7 ("});
+tel.addEventListener("blur",()=>{if(tel.value.replace(/\D/g,"").length<=1)tel.value=""});
+
+$("#order").addEventListener("submit",e=>{
+  e.preventDefault();
+  const name=$("#o-name"),city=$("#o-city"),ok=$("#o-ok");
+  [name,tel,city,ok].forEach(x=>x.setCustomValidity(""));
+  if(!name.value.trim()){name.setCustomValidity("Как вас зовут?");name.reportValidity();return}
+  if(tel.value.replace(/\D/g,"").length!==11){tel.setCustomValidity("Введите номер полностью: 10 цифр после +7");tel.reportValidity();return}
+  if(!city.value.trim()){city.setCustomValidity("Укажите город доставки");city.reportValidity();return}
+  if(!ok.checked){ok.setCustomValidity("Нужно согласие на обработку данных");ok.reportValidity();return}
+  const dl=document.querySelector('input[name="dl"]:checked').value;
+  $("#order").style.display="none";$("#items").innerHTML="";$("#total").style.display="none";
+  $("#done").style.display="block";
+  $("#done").innerHTML=`<b>Заказ отправлен ✨</b><p style="margin-top:8px">${esc(name.value.trim())}, спасибо! ${BAG.length} ${BAG.length===1?"позиция":BAG.length<5?"позиции":"позиций"} на ${rub(BAG.reduce((a,b)=>a+b.p,0))}, ${esc(city.value.trim())}, ${dl}. Менеджер свяжется с вами в течение 30 минут.</p><p style="margin-top:10px;color:var(--soft);font-size:14px">В вашей версии такой заказ с моделью, цветом и размером сразу приходит вам в Telegram.</p>`;
+  BAG.length=0;$("#bagN").textContent=0;$("#bagN2").textContent=0;
+  $("#order").reset();
+});
+
+let tt;function toast(m){const t=$("#toast");t.textContent=m;t.style.display="block";clearTimeout(tt);tt=setTimeout(()=>t.style.display="none",2200)}
+document.addEventListener("click",e=>{const a=e.target.closest("[data-toast]");if(!a)return;e.preventDefault();toast(a.dataset.toast)});
+</script>
+</body>
+</html>

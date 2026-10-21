@@ -53,7 +53,8 @@ nav.links a:hover{opacity:1;color:var(--accent)}
 .perk{border-top:1px solid var(--line);padding-top:10px;font-size:13.5px;color:var(--soft)}
 .perk b{display:block;color:var(--ink);font-size:15px}
 .heroart{position:relative;border-radius:200px 200px var(--r) var(--r);overflow:hidden;background:linear-gradient(170deg,#E7DCCB 0%,#D8C6AE 100%);aspect-ratio:4/5;max-height:640px}
-.heroart svg{position:absolute;inset:6% 8% 0;width:84%;height:94%}
+.heroart>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 8%}
+@media (max-width:759px){.hero .heroart{order:-1;aspect-ratio:auto;height:58vh;min-height:360px;border-radius:160px 160px var(--r) var(--r)}.mbar{transform:translateY(110%);transition:transform .3s}.mbar.on{transform:none}}
 .heroart .tagx{position:absolute;left:16px;bottom:16px;background:var(--paper);border-radius:14px;padding:10px 14px;font-size:13px;box-shadow:0 12px 30px -16px rgba(34,28,23,.5)}
 .heroart .tagx b{display:block;font-size:15px}
 .heroart .tagy{position:absolute;right:14px;top:22%;background:var(--accent);color:#fff;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:700;transform:rotate(6deg)}
@@ -73,8 +74,13 @@ nav.links a:hover{opacity:1;color:var(--accent)}
 .grid-p{display:grid;grid-template-columns:1fr 1fr;gap:18px 12px}
 .card{display:flex;flex-direction:column}
 .pic{position:relative;aspect-ratio:3/4;border-radius:var(--r);overflow:hidden}
-.pic svg{position:absolute;inset:8% 10% 2%;width:80%;height:90%;transition:transform .5s}
-.card:hover .pic svg{transform:scale(1.04)}
+.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .45s,transform .6s}
+.pic img.flat{object-fit:contain;padding:8%;background:#fff}
+.pic img.alt{opacity:0}
+@media (hover:hover){.card:hover .pic img.alt{opacity:1}.card:hover .pic img{transform:scale(1.03)}}
+.pic .onm{position:absolute;right:10px;bottom:10px;background:rgba(251,248,242,.92);border-radius:999px;padding:4px 10px;font-size:11px;font-weight:700;z-index:2}
+@media (hover:hover){.card:hover .pic .onm{opacity:0}}
+.card.sw .pic img.alt{opacity:1}.card.sw .pic .onm{opacity:0}.pic{cursor:pointer}
 .badge{position:absolute;left:10px;top:10px;background:var(--paper);border-radius:999px;padding:4px 10px;font-size:11.5px;font-weight:700}
 .badge.r{background:var(--accent);color:#fff}
 .card h3{font-size:15px;font-weight:700;margin-top:10px;line-height:1.3}
@@ -112,14 +118,13 @@ tr.hl td{background:var(--sand)}
 .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:26px}
 .num b{font-family:"Cormorant Garamond",serif;font-size:46px;font-weight:500;line-height:1;display:block}
 .num span{font-size:13px;color:#B8AD9F}
-.atelier{border-radius:var(--r);background:#3A312A;aspect-ratio:5/4;position:relative;overflow:hidden}
-.atelier svg{position:absolute;inset:0;width:100%;height:100%}
-.atelier svg path[stroke="#3A312A"]{stroke:#B8AD9F}
+.atelier{border-radius:var(--r);background:#3A312A;aspect-ratio:4/5;max-height:620px;width:100%;position:relative;overflow:hidden}
+.atelier img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
 /* looks */
 .looks{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:thin}
 .look{flex:none;width:76%;max-width:340px;scroll-snap-align:start}
-.look .pic{aspect-ratio:5/4}
+.look .pic{aspect-ratio:4/5}
 .look h3{font-family:"Cormorant Garamond",serif;font-size:26px;font-weight:500;margin-top:10px}
 .look p{font-size:14px;color:var(--soft)}
 .look .sum{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-weight:700}
@@ -127,6 +132,9 @@ tr.hl td{background:var(--sand)}
 
 /* gift */
 .gift .grid{display:grid;gap:26px;align-items:center}
+.gwrap{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;max-height:600px}
+.gwrap>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gwrap .gcard{position:absolute;left:6%;right:6%;bottom:6%}
 .gcard{aspect-ratio:1.6;border-radius:22px;background:linear-gradient(135deg,#8C3B2A,#5A2419);color:#F4EFE7;padding:22px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-shadow:0 30px 60px -30px rgba(90,36,25,.7)}
 .gcard:after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;border:1px solid rgba(255,255,255,.18)}
 .gcard .l{font-family:"Cormorant Garamond",serif;font-size:30px;letter-spacing:.12em}
@@ -187,6 +195,7 @@ footer a{text-decoration:none}
 .item{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
 .item .th{width:64px;height:80px;border-radius:10px;position:relative;overflow:hidden}
 .item .th svg{position:absolute;inset:6%;width:88%;height:88%}
+.item .th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .item b{display:block;font-size:14px}
 .item span{font-size:12.5px;color:var(--soft)}
 .item button{border:0;background:none;color:var(--soft);font-size:13px;cursor:pointer;text-decoration:underline}
@@ -259,7 +268,7 @@ form#order{display:grid;gap:12px;margin-top:6px}
       </div>
     </div>
     <div class="heroart">
-      <svg viewBox="0 0 200 260" id="heroSvg" aria-hidden="true"></svg>
+      <img src="img/hero.jpg" alt="Девушка в длинном пальто цвета кэмел" fetchpriority="high">
       <div class="tagy">Новинка</div>
       <div class="tagx"><b>Пальто «Урал»</b>шерсть 80% · 18 900 ₽</div>
     </div>
@@ -323,7 +332,7 @@ form#order{display:grid;gap:12px;margin-top:6px}
         <div class="num"><b>2 300</b><span>заказов по России</span></div>
       </div>
     </div>
-    <div class="atelier"><svg viewBox="0 0 400 320" id="atelier" aria-hidden="true"></svg></div>
+    <div class="atelier"><img src="img/shop.jpg" alt="Шоурум LÓRA: вешалки, стол с трикотажем и примерочная" loading="lazy"></div>
   </div>
 </section>
 
@@ -339,10 +348,12 @@ form#order{display:grid;gap:12px;margin-top:6px}
 
 <section id="gift" class="gift" style="background:var(--paper)">
   <div class="wrap grid">
+    <div class="gwrap"><img src="img/gift.jpg" alt="Подарочная коробка с чёрной лентой" loading="lazy">
     <div class="gcard" id="gcard">
       <div class="l">LÓRA</div>
       <div><div class="to" id="gto">Подарочный сертификат</div><div class="v" id="gval">5 000 ₽</div></div>
       <div class="to">Действует 12 месяцев · онлайн и в шоуруме</div>
+    </div>
     </div>
     <div>
       <div class="eyebrow">Подарок к Новому году</div>
@@ -498,14 +509,14 @@ const svgOf=(t,c)=>`<svg viewBox="0 0 200 260" aria-hidden="true">${garment(t,c)
 
 const SIZES=["XS","S","M","L","XL"];
 const P=[
- {id:1,n:"Пальто «Урал»",cat:"coat",t:"coat",p:18900,b:"Новинка",cols:[["#B48A63","Кэмел"],["#3B3633","Графит"],["#C9BBA7","Молоко"]],out:["XS"]},
- {id:2,n:"Жакет оверсайз",cat:"jacket",t:"jacket",p:12400,b:"Хит",cols:[["#2F2B29","Чёрный"],["#7D6B5C","Мокко"],["#9C3D2C","Бордо"]],out:[]},
- {id:3,n:"Свитер с косами",cat:"knit",t:"knit",p:6900,old:8200,cols:[["#D9CBB5","Овсяный"],["#5B5E45","Олива"]],out:["XL"]},
- {id:4,n:"Платье-миди из шерсти",cat:"dress",t:"dress",p:9800,cols:[["#6A2B24","Вишня"],["#2F3A4A","Синий"]],out:[]},
- {id:5,n:"Брюки палаццо",cat:"pants",t:"pants",p:6400,cols:[["#8E8172","Тауп"],["#2F2B29","Чёрный"]],out:["XS","XL"]},
- {id:6,n:"Рубашка из хлопка",cat:"jacket",t:"shirt",p:5200,cols:[["#E9E2D6","Белый"],["#9DB0C4","Небесный"]],out:[]},
- {id:7,n:"Пальто-халат с поясом",cat:"coat",t:"coat",p:21500,b:"Осталось 3",cols:[["#5B5E45","Олива"],["#B48A63","Кэмел"]],out:["XS","S"]},
- {id:8,n:"Кардиган из альпаки",cat:"knit",t:"knit",p:8700,cols:[["#C79C86","Пудра"],["#7D6B5C","Мокко"]],out:[]}
+ {id:1,img:"p1",alt:"p1m",flat:true,n:"Пальто «Урал»",cat:"coat",t:"coat",p:18900,b:"Новинка",cols:[["#B48A63","Кэмел"],["#3B3633","Графит"],["#C9BBA7","Молоко"]],out:["XS"]},
+ {id:2,img:"p2",alt:"p2m",flat:true,n:"Жакет оверсайз",cat:"jacket",t:"jacket",p:12400,b:"Хит",cols:[["#2F2B29","Чёрный"],["#7D6B5C","Мокко"],["#9C3D2C","Бордо"]],out:[]},
+ {id:3,img:"p3",alt:"p3m",flat:true,n:"Свитер с косами",cat:"knit",t:"knit",p:6900,old:8200,cols:[["#D9CBB5","Овсяный"],["#5B5E45","Олива"]],out:["XL"]},
+ {id:4,img:"p4",alt:null,flat:false,n:"Платье-миди из шерсти",cat:"dress",t:"dress",p:9800,cols:[["#6A2B24","Вишня"],["#2F3A4A","Синий"]],out:[]},
+ {id:5,img:"p5",alt:"p5m",flat:true,n:"Брюки палаццо",cat:"pants",t:"pants",p:6400,cols:[["#8E8172","Тауп"],["#2F2B29","Чёрный"]],out:["XS","XL"]},
+ {id:6,img:"p6m",alt:"p6",flat:false,n:"Рубашка из хлопка",cat:"jacket",t:"shirt",p:5200,cols:[["#E9E2D6","Белый"],["#9DB0C4","Небесный"]],out:[]},
+ {id:7,img:"p7",alt:null,flat:true,n:"Пальто-халат с поясом",cat:"coat",t:"coat",p:21500,b:"Осталось 3",cols:[["#5B5E45","Олива"],["#B48A63","Кэмел"]],out:["XS","S"]},
+ {id:8,img:"p8",alt:"p8m",flat:false,n:"Кардиган из альпаки",cat:"knit",t:"knit",p:8700,cols:[["#C79C86","Пудра"],["#7D6B5C","Мокко"]],out:[]}
 ];
 const BG=["#EAE0D2","#E4DACB","#EEE6DA","#E6DDD3"];
 const sel={};P.forEach(x=>sel[x.id]={c:0,s:null});
@@ -513,7 +524,7 @@ const sel={};P.forEach(x=>sel[x.id]={c:0,s:null});
 function card(x,i){
   const s=sel[x.id],col=x.cols[s.c][0];
   return `<article class="card" data-id="${x.id}">
-  <div class="pic" style="background:${BG[i%4]}">${x.b?`<span class="badge ${x.b==="Осталось 3"?"r":""}">${x.b}</span>`:""}${svgOf(x.t,col)}</div>
+  <div class="pic" style="background:${BG[i%4]}">${x.b?`<span class="badge ${x.b==="Осталось 3"?"r":""}">${x.b}</span>`:""}<img src="img/${x.img}.jpg" alt="${x.n}" loading="lazy"${x.flat?' class="flat"':""}>${x.alt?`<img class="alt${["p6"].includes(x.alt)?" flat":""}" src="img/${x.alt}.jpg" alt="" loading="lazy">`:""}${s.c?`<span class="onm">на фото: ${x.cols[0][1].toLowerCase()}</span>`:""}</div>
   <h3>${x.n}</h3>
   <div class="pr">${rub(x.p)}${x.old?`<s>${rub(x.old)}</s>`:""}</div>
   <div class="dots">${x.cols.map((c,j)=>`<button class="dot" title="${c[1]}" aria-label="Цвет ${c[1]}" data-c="${j}" aria-pressed="${j===s.c}" style="background:${c[0]}"></button>`).join("")}</div>
@@ -527,11 +538,12 @@ render();
 document.querySelector(".filters").addEventListener("click",e=>{const b=e.target.closest(".f");if(!b)return;flt=b.dataset.f;document.querySelectorAll(".f").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
 $("#grid").addEventListener("click",e=>{
   const c=e.target.closest(".card");if(!c)return;const x=P.find(p=>p.id==c.dataset.id),s=sel[x.id];
+  if(e.target.closest(".pic")&&x.alt){c.classList.toggle("sw");return}
   if(e.target.closest(".dot")){s.c=+e.target.closest(".dot").dataset.c;rerender(c,x);return}
   if(e.target.closest(".sz")){s.s=e.target.closest(".sz").dataset.s;rerender(c,x);return}
   if(e.target.closest(".add")){
     if(!s.s){toast("Сначала выберите размер");c.querySelector(".sizes").animate([{transform:"translateX(0)"},{transform:"translateX(-6px)"},{transform:"translateX(6px)"},{transform:"translateX(0)"}],{duration:300});return}
-    addBag({n:x.n,p:x.p,t:x.t,col:x.cols[s.c][0],cn:x.cols[s.c][1],s:s.s});
+    addBag({n:x.n,p:x.p,t:x.t,img:x.flat?x.img:x.img,col:x.cols[s.c][0],cn:x.cols[s.c][1],s:s.s});
     const b=c.querySelector(".add");b.textContent="Добавлено ✓";b.classList.add("ok");
   }
 });
@@ -540,16 +552,9 @@ function rerender(c,x){const i=[...c.parentNode.children].indexOf(c);const tmp=d
 /* бегущая строка */
 const mq="Своё производство<span>✦</span>Доставка по России<span>✦</span>Примерка при получении<span>✦</span>Итальянская шерсть<span>✦</span>Подарочные сертификаты<span>✦</span>";
 $("#mq").innerHTML=mq.repeat(4);
-$("#heroSvg").innerHTML=garment("coat","#B48A63");
 
 /* ателье */
-$("#atelier").innerHTML=`<rect width="400" height="320" fill="#3A312A"/>
-<rect x="0" y="236" width="400" height="84" fill="#2E2621"/>
-<g transform="translate(40 30) scale(.9)">${garment("jacket","#B48A63")}</g>
-<g transform="translate(150 22) scale(.95)">${garment("coat","#5B5E45")}</g>
-<g transform="translate(262 34) scale(.86)">${garment("dress","#8C3B2A")}</g>
-<path d="M10 52 H390" stroke="#6E655C" stroke-width="3"/>
-<g transform="translate(20 274)"><rect width="90" height="26" rx="4" fill="#E9DFD1"/><text x="45" y="18" text-anchor="middle" font-family="Manrope" font-size="12" font-weight="800" fill="#3A312A">LÓRA ATELIER</text></g>`;
+
 
 /* размеры */
 const ST=[["XS","42","82–85","64–67","88–91"],["S","44","86–89","68–71","92–95"],["M","46","90–93","72–75","96–99"],["L","48","94–97","76–79","100–103"],["XL","50","98–102","80–84","104–108"]];
@@ -574,12 +579,11 @@ const LOOKS=[
 ];
 $("#looksRow").innerHTML=LOOKS.map((l,k)=>{
   const items=l.ids.map(id=>P.find(p=>p.id===id));const sum=items.reduce((a,b)=>a+b.p,0);
-  const art=items.slice(0,3).map((x,j)=>`<g transform="translate(${[10,120,230][j]-(items.length===2?-55:0)} ${j%2?28:8}) scale(.62)">${garment(x.t,x.cols[0][0])}</g>`).join("");
-  return `<article class="look"><div class="pic" style="background:${l.bg}"><svg viewBox="0 0 360 200" style="inset:4% 2% 0;width:96%;height:96%">${art}</svg></div>
+  return `<article class="look"><div class="pic" style="background:${l.bg}"><img src="img/look${k+1}.jpg" alt="Образ «${l.n}»" loading="lazy"></div>
   <h3>${l.n}</h3><p>${l.d}</p><div class="sum"><span>${rub(sum)}</span><button data-look="${k}">Весь образ в заказ</button></div></article>`;
 }).join("");
 $("#looksRow").addEventListener("click",e=>{const b=e.target.closest("[data-look]");if(!b)return;
-  LOOKS[b.dataset.look].ids.forEach(id=>{const x=P.find(p=>p.id===id);addBag({n:x.n,p:x.p,t:x.t,col:x.cols[0][0],cn:x.cols[0][1],s:"размер уточним",silent:1})});
+  LOOKS[b.dataset.look].ids.forEach(id=>{const x=P.find(p=>p.id===id);addBag({n:x.n,p:x.p,t:x.t,img:x.img,col:x.cols[0][0],cn:x.cols[0][1],s:"размер уточним",silent:1})});
   toast("Образ в заказе. Размер уточним при звонке");b.textContent="Добавлено ✓"});
 
 /* сертификат */
@@ -593,7 +597,7 @@ const BAG=[];
 function addBag(it){BAG.push(it);drawBag();if(!it.silent)toast("Добавлено в заказ")}
 function drawBag(){
   const n=BAG.length;$("#bagN").textContent=n;$("#bagN2").textContent=n;
-  $("#items").innerHTML=n?BAG.map((x,i)=>`<div class="item"><div class="th" style="background:${x.cert?"#8C3B2A":"#EAE0D2"}">${x.cert?'<svg viewBox="0 0 64 80"><text x="32" y="46" text-anchor="middle" font-family="Cormorant Garamond" font-size="16" fill="#F4EFE7" letter-spacing="2">LÓRA</text></svg>':svgOf(x.t,x.col)}</div><div><b>${esc(x.n)}</b><span>${x.cert?"электронный":esc(x.cn)+" · "+esc(x.s)} · ${rub(x.p)}</span></div><button data-rm="${i}">Убрать</button></div>`).join(""):'<p class="empty">Пока пусто. Выберите размер в карточке и нажмите «В заказ».</p>';
+  $("#items").innerHTML=n?BAG.map((x,i)=>`<div class="item"><div class="th" style="background:${x.cert?"#8C3B2A":"#EAE0D2"}">${x.cert?'<svg viewBox="0 0 64 80"><text x="32" y="46" text-anchor="middle" font-family="Cormorant Garamond" font-size="16" fill="#F4EFE7" letter-spacing="2">LÓRA</text></svg>':(x.img?`<img src="img/${x.img}.jpg" alt="">`:svgOf(x.t,x.col))}</div><div><b>${esc(x.n)}</b><span>${x.cert?"электронный":esc(x.cn)+" · "+esc(x.s)} · ${rub(x.p)}</span></div><button data-rm="${i}">Убрать</button></div>`).join(""):'<p class="empty">Пока пусто. Выберите размер в карточке и нажмите «В заказ».</p>';
   $("#total").style.display=n?"flex":"none";$("#order").style.display=n?"grid":"none";
   $("#sum").textContent=rub(BAG.reduce((a,b)=>a+b.p,0));
 }
@@ -629,6 +633,7 @@ $("#order").addEventListener("submit",e=>{
 
 let tt;function toast(m){const t=$("#toast");t.textContent=m;t.style.display="block";clearTimeout(tt);tt=setTimeout(()=>t.style.display="none",2200)}
 document.addEventListener("click",e=>{const a=e.target.closest("[data-toast]");if(!a)return;e.preventDefault();toast(a.dataset.toast)});
+const mb=document.querySelector(".mbar");addEventListener("scroll",()=>mb.classList.toggle("on",scrollY>420),{passive:true});
 </script>
 </body>
 </html>
